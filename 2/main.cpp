@@ -10,14 +10,15 @@ int main(int argc, char** argv) {
     Point **p;
     Point *f, *s;
     int x, y;
+    int i, j;
     if (argc < 3) return -1;
     p = new Point*[argc];
-    for (int i = 1; i < argc; i++){
+    for (i = 1, j = 0; i < argc; i++, j++){
         sscanf(argv[i],"%d%*c%d", &x, &y);
-        p[i-1] = new Point(x, y);
+        p[j] = new Point(x, y);
     }
-    for (int i = 0; i < argc-1; i++){
-        for (int j = i+1; j < argc - 1; j++){
+    for (i = 0; i < argc-1; i++){
+        for (j = i+1; j < argc - 1; j++){
             double dis = distance(p[i], p[j]);
             if (dis > d){
                 d = dis;
@@ -26,6 +27,9 @@ int main(int argc, char** argv) {
             }
         }
     }
-    printf("Long distance is between points with coordinates (%d;%d) and (%d;%d) - %2f", f->getX(), f->getY(), s->getX(), s->getY(), d);
-
+    printf("Long distance is between points with coordinates (%d;%d) and (%d;%d) - %f", f->getX(), f->getY(), s->getX(), s->getY(), d);
+    for (i = 0; i < argc-1; i++){
+        delete p[i];
+    }
+    delete []p;
 }

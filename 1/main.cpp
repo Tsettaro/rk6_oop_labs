@@ -2,6 +2,7 @@
 #include <iostream>
 #include "point.hpp"
 
+// Перевод координат точки из полярной в декартову систему 
 Point Point::polar(float radius, float f) {
 	Point p(radius*cos(f), radius*sin(f));
 	return p;
@@ -15,23 +16,32 @@ int main(int argc, char** argv) {
 	float deltaX = 1.0, deltaY = -1.0;
 	Point vertex[8];
 	int i = 0;
-	if (argc > 3) {
+	// Проверка на количество аргументов
+	if (argc > 2) {
 		side = atof(argv[1]);
 		deltaX = atof(argv[2]);
 		deltaY = atof(argv[3]);
-  	}
-	if (deltaX <= 0 || deltaY >= 0){
+	} else{
+		std::cout << "Invalid count of arguments\n";
 		return -1;
 	}
 	radius = side*sqrt(4+2*sqrt(2))/2;
+
+	// Проверка на расположение точки
+	if (deltaX <= 0 || deltaY >= 0){
+		std::cout << "Invalid coordinates of point";
+		return -2;
+	}
 	while (i < 8){
+		// Создание вершины восьмиугольника
 		vertex[i] = Point::polar(radius,angle);
 		angle+=(pi/4.0);
 		i++;
 	}
 	do{
-		--i;
-		std::cout << vertex[i].getX()+deltaX << ";" << vertex[i].getY()+deltaY << '\n';
+		// Вывод координат вершин восьмиугольника
+		printf("Point %d: %f ; %f\n", i, vertex[i].getX()+deltaX, vertex[i].getY()+deltaY);
+		i--;
 	}while(i>0);
 	return 0;
 }

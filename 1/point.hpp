@@ -6,5 +6,6 @@ class Point {
 		Point(): x(0), y(0) {};
 		float getX() {return x;}
 		float getY() {return y;}
-		static Point polar(float, float);
+		// Статический метод класса
+		static Point polar(float, float); 
 };

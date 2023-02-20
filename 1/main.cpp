@@ -26,7 +26,7 @@ int main(int argc, char** argv) {
 
 	// Проверка на расположение точки
 	if (deltaX <= 0 || deltaY >= 0){
-		std::cout << "Invalid coordinates of point";
+		std::cout << "Invalid coordinates of point\n";
 		return -2;
 	}
 

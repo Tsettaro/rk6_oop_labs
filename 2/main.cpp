@@ -27,7 +27,7 @@ int main(int argc, char** argv) {
             }
         }
     }
-    printf("The longest distance is between points with coordinates (%d;%d) and (%d;%d) - %f", f->getX(), f->getY(), s->getX(), s->getY(), d);
+    printf("The longest distance is between points with coordinates (%d;%d) and (%d;%d) - %f\n", f->getX(), f->getY(), s->getX(), s->getY(), d);
     for (i = 0; i < argc-1; i++){
         delete p[i];
     }

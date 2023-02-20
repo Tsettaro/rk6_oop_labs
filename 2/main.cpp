@@ -1,7 +1,7 @@
 #include "point.hpp"
 
 double Point::distance(Point* q){
-    double _d = sqrt(pow(q->getX() - x, 2) + pow(q->getY() - y, 2));
+    double _d = sqrt(pow(q->getX() - _x, 2) + pow(q->getY() - _y, 2));
     return _d;
 }
 
@@ -27,7 +27,7 @@ int main(int argc, char** argv) {
             }
         }
     }
-    printf("Long distance is between points with coordinates (%d;%d) and (%d;%d) - %f", f->getX(), f->getY(), s->getX(), s->getY(), d);
+    printf("The longest distance is between points with coordinates (%d;%d) and (%d;%d) - %f", f->getX(), f->getY(), s->getX(), s->getY(), d);
     for (i = 0; i < argc-1; i++){
         delete p[i];
     }

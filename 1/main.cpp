@@ -25,13 +25,15 @@ int main(int argc, char** argv) {
 		std::cout << "Invalid count of arguments\n";
 		return -1;
 	}
-	radius = side*sqrt(4+2*sqrt(2))/2;
 
 	// Проверка на расположение точки
 	if (deltaX <= 0 || deltaY >= 0){
 		std::cout << "Invalid coordinates of point";
 		return -2;
 	}
+
+	radius = side*sqrt(4+2*sqrt(2))/2;
+
 	while (i < 8){
 		// Создание вершины восьмиугольника
 		vertex[i] = Point::polar(radius,angle);

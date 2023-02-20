@@ -10,5 +10,5 @@ class Point {
 		Point(): x(0), y(0) {};
 		int getX() {return x;}
 		int getY() {return y;}
-		friend double distance(Point*, Point*);
+		double distance(Point*);
 };

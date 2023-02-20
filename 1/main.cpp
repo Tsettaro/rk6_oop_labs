@@ -1,5 +1,3 @@
-#include <cmath>
-#include <iostream>
 #include "point.hpp"
 
 // Перевод координат точки из полярной в декартову систему 

@@ -1,11 +1,11 @@
 class Point {
 	private:
-		float x, y;
-		Point (float _x, float _y): x(_x),y(_y) {};
+		float _x, _y;
+		Point (float x, float y): _x(x),_y(y) {};
 	public:
-		Point(): x(0), y(0) {};
-		float getX() {return x;}
-		float getY() {return y;}
+		Point(): _x(0), _y(0) {};
+		float getX() {return _x;}
+		float getY() {return _y;}
 		// Статический метод класса
 		static Point polar(float, float); 
 };

@@ -15,7 +15,7 @@ int main(int argc, char** argv) {
 	Point vertex[8];
 	int i = 0;
 	// Проверка на количество аргументов
-	if (argc > 2) {
+	if (argc > 3) {
 		side = atof(argv[1]);
 		deltaX = atof(argv[2]);
 		deltaY = atof(argv[3]);

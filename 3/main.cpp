@@ -1,17 +1,4 @@
-#include <Alpha.hpp>
-
-class Alpha {
-private:
-    unsigned set;
-public:
-    Alpha(){set = 0;}
-    Alpha(char *s);
-
-    Alpha operator^(const Alpha&);
-    Alpha operator~();
-
-    friend std::ostream& operator<<(std::ostream&, const Alpha&);
-};
+#include "Alpha.hpp"
 
 Alpha::Alpha(char *s){
     set = 0;
@@ -51,9 +38,8 @@ int main(int argc, char **argv) {
     Alpha set1(argv[1]);
     Alpha set2(argv[2]);
 
-    // Compute the letters that are absent or coincide in both sets
     Alpha result = ~(set1 ^ set2);
-    std::cout << result << std::endl;
+    std::cout << "Result: " << result << std::endl;
 
     return 0;
 }

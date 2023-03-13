@@ -10,7 +10,7 @@ Alpha::Alpha(char *s){
 
 Alpha Alpha::operator~(){
     Alpha result;
-    result.set = ~set;
+    result.set = ~ set;
     return result;
 }
 
@@ -20,10 +20,10 @@ Alpha Alpha::operator^(const Alpha& other) {
     return result;
 }
 
-std::ostream& operator<<(std::ostream& os, const Alpha& set) {
+std::ostream& operator<<(std::ostream& os, const Alpha& s) {
     unsigned bit = 1;
     for (int i = 0; i < 26; i++) {
-        if ((set.set & bit) > 0) {
+        if ((s.set & bit) > 0) {
             os << (char)('a' + i);
         }
         bit = bit << 1;
@@ -35,10 +35,10 @@ int main(int argc, char **argv) {
 
     if (argc < 3) return -1;
 
-    Alpha set1(argv[1]);
-    Alpha set2(argv[2]);
+    Alpha s1(argv[1]);
+    Alpha s2(argv[2]);
 
-    Alpha result = ~(set1 ^ set2);
+    Alpha result = ~ (s1 ^ s2);
     std::cout << "Result: " << result << std::endl;
 
     return 0;
